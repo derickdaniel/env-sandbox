@@ -1,14 +1,15 @@
 terraform {
- backend "s3" {
- bucket = "my-bucket"
- key = "terraform/backend"
- region = "ap-south-2"
- }
+  backend "s3" {
+    bucket     = "derick-tf-bucket"
+    key        = "terraform/backend"
+    profile    = "default"
+    region     = "ap-south-1"
+  }
 }
 locals {
- env_name = "sandbox"
- aws_region = "ap-south-2"
- k8s_cluster_name = "ms-cluster"
+  env_name         = "sandbox"
+  aws_region       = "ap-south-1"
+  k8s_cluster_name = "ms-cluster"
 }
 # Network Configuration
 # EKS Configuration
